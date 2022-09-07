@@ -1,7 +1,7 @@
 /**
  * @name ShowHiddenChannelsNew
  * @author Rubikscraft
- * @version 3.3.0
+ * @version 3.3.1
  * @description Displays all hidden Channels, which can't be accessed due to Role Restrictions, this won't allow you to read them (impossible). This plugin was deleted, now it's patched and works again.
  * @source https://github.com/rubikscraft/ShowHiddenChannelsPatched
  * @updateUrl https://raw.githubusercontent.com/rubikscraft/ShowHiddenChannelsPatched/master/ShowHiddenChannels.plugin.js
@@ -199,7 +199,7 @@
 				};
 				
 				this.css = `
-					${BDFDB.dotCNS._showhiddenchannelsaccessmodal + BDFDB.dotCN.messagespopoutemptyplaceholder} {
+					hiddenchannelaccessmodal ${BDFDB.dotCN.messagespopoutemptyplaceholder} {
 						position: absolute;
 						bottom: 0;
 						width: 100%;
@@ -410,7 +410,7 @@
 			
 			processChannelItem (e) {
 				if (e.instance.props.channel && this.isChannelHidden(e.instance.props.channel.id)) {
-					if (!e.returnvalue) e.instance.props.className = BDFDB.DOMUtils.formatClassName(e.instance.props.className, BDFDB.disCN._showhiddenchannelshiddenchannel);
+					if (!e.returnvalue) e.instance.props.className = BDFDB.DOMUtils.formatClassName(e.instance.props.className);
 					else {
 						let [children, index] = BDFDB.ReactUtils.findParent(e.returnvalue, {name: "ChannelItemIcon"});
 						let channelChildren = BDFDB.ReactUtils.findChild(e.returnvalue, {props: [["className", BDFDB.disCN.channelchildren]]});
@@ -563,7 +563,7 @@
 					size: "MEDIUM",
 					header: BDFDB.LanguageUtils.LanguageStrings.CHANNEL + " " + BDFDB.LanguageUtils.LanguageStrings.ACCESSIBILITY,
 					subHeader: "#" + channel.name,
-					className: BDFDB.disCN._showhiddenchannelsaccessmodal,
+					className: "hiddenchannelaccessmodal",
 					contentClassName: BDFDB.DOMUtils.formatClassName(!isThread && BDFDB.disCN.listscroller),
 					onOpen: modalInstance => {if (modalInstance) accessModal = modalInstance;},
 					children: isThread ? infoStrings : [
