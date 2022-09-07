@@ -4,7 +4,7 @@
  * @version 3.3.1
  * @description Displays all hidden Channels, which can't be accessed due to Role Restrictions, this won't allow you to read them (impossible). This plugin was deleted, now it's patched and works again.
  * @source https://github.com/rubikscraft/ShowHiddenChannelsPatched
- * @updateUrl https://raw.githubusercontent.com/rubikscraft/ShowHiddenChannelsPatched/master/ShowHiddenChannels.plugin.js
+ * @updateUrl https://raw.githubusercontent.com/rubikscraft/ShowHiddenChannelsPatched/master/ShowHiddenChannelsNew.plugin.js
  */
 
  module.exports = (_ => {
